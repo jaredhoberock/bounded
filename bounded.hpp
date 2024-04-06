@@ -5,6 +5,7 @@
 #include <iostream>
 #include <type_traits>
 
+// XXX do we really require a non-negative bound?
 template<std::integral auto b>
   requires (b >= 0)
 class bounded

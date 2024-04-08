@@ -183,7 +183,7 @@ class bounded
 };
 
 template<std::integral auto b>
-class std::numeric_limits<bounded<b>> : public std::numeric_limits<decltype(b)>;
+class std::numeric_limits<bounded<b>> : public std::numeric_limits<decltype(b)>
 {
   public:
     static constexpr auto max() noexcept

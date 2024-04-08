@@ -3,6 +3,7 @@
 #include "constant.hpp"
 #include <concepts>
 #include <iostream>
+#include <limits>
 #include <type_traits>
 
 // XXX do we really require a non-negative bound?
@@ -179,5 +180,15 @@ class bounded
 
   private:
     value_type value_;
+};
+
+template<std::integral auto b>
+class std::numeric_limits<bounded<b>> : public std::numeric_limits<decltype(b)>;
+{
+  public:
+    static constexpr auto max() noexcept
+    {
+      return b;
+    }
 };
 

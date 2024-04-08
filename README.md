@@ -6,13 +6,13 @@ It is intended for use cases where it is important to know statically the larges
 
 For example, `bounded<16>` could bound a `for` loop:
 
-    // the value of loop_bound may not be greater than 16
-    bounded<16> loop_bound = 10;
+    // the value of n may not be greater than 16
+    bounded<16> n = 10;
 
     #pragma unroll
-    for(int i = 0; i != loop_bound.bound; ++i)
+    for(int i = 0; i != n.bound; ++i)
     {
-      if(i < loop_bound)
+      if(i < n)
       {
         f(i);
       }

@@ -18,9 +18,9 @@ For example, `bounded<16>` could bound a `for` loop:
       }
     }
 
-One might write a loop this way to encourage unrolling and predication in an effort to minimize warp divergence in GPU code.
+One might write a loop this way to encourage unrolling and predication in an effort to minimize warp divergence in CUDA code.
 
-Arithmetic with `bounded` and `constant` can track upper bounds in some cases:
+Arithmetic between `bounded` and `constant` can track upper bounds in some cases:
 
     bounded<10> a = 7;
     bounded<50> b = 42;
